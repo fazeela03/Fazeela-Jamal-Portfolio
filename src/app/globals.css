@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b1120;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +13,83 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Heading scale ────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.25rem); }
+
+/* ─── Body text ────────────────────────────────────────────────── */
+p {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Monospace (for tags, labels, code) ───────────────────────── */
+.font-mono, code, pre {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85em;
+}
+
+/* ─── Uppercase labels ─────────────────────────────────────────── */
+.tracking-widest {
+  letter-spacing: 0.12em;
+}
+
+/* ─── Section dividers ─────────────────────────────────────────── */
+.section-divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+  max-width: 72rem;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.08) 20%,
+    rgba(0, 255, 255, 0.15) 50%,
+    rgba(0, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* ─── Selection color ──────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.3);
 }
